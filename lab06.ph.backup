@@ -29,30 +29,6 @@
                 "operator"
             ],
             "task": true
-        },
-        {
-            "name": "postRecord",
-            "summary": "New Change Ticket",
-            "description": "Create a new Servce Now Change Ticket",
-            "input": [],
-            "output": {
-                "name": "changeTickets",
-                "type": "array",
-                "description": "An array of objects. Each element is a change management ticket document.",
-                "schema": {
-                    "type": "array",
-                    "items": {
-                        "title": "changeTicket",
-                        "$ref": "changeRequest#/definitions/changeTicket"
-                    }
-                }
-            },
-            "roles": [
-                "admin",
-                "engineer",
-                "operator"
-            ],
-            "task": true
         }
     ]
 }

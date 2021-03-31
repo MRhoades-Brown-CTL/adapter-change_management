@@ -182,25 +182,8 @@ class ServiceNowAdapter extends EventEmitter {
      *   handles the response.
      */
     postRecord(callback) {
-        this.connector.post((response, error) => {
-            if (error) {
-                return callback(null, error);
-            } else if (response && typeof response === 'object' && response.body) {
-                const parsedResult = JSON.parse(response.body).result;
-                const result = {
-                    change_ticket_number: parsedResult.number,
-                    active: parsedResult.active,
-                    priority: parsedResult.priority,
-                    description: parsedResult.description,
-                    work_start: parsedResult.work_start,
-                    work_end: parsedResult.work_end,
-                    change_ticket_key: parsedResult.sys_id
-                };
 
-                return callback(result);
-            }
-            return callback({});
-        });
+        this.connector.post(callback);
     }
 }
 
